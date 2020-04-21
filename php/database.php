@@ -3,7 +3,5 @@
 		if(!$db){
 			die('Connection failed: '. mysqli_connect_error());
 		}
-
-
-
+qw'l;ejq qkdnq dqkd  qmnd 
 ?>
