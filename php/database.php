@@ -3,5 +3,5 @@
 		if(!$db){
 			die('Connection failed: '. mysqli_connect_error());
 		}
-
+qwe ewrew
 ?>
