@@ -1,0 +1,199 @@
+ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{
+      display:none;
+    }
+    *{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+.outer-back{
+	position: absolute;
+	width: 100%;
+	background-image: url('../images/1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*background-color: grey;*/
+	padding-top:2.5vh;
+	margin: auto;
+	/*min-height: 850px;*/
+}
+.main-div{
+	position: relative;
+	/*height: 95vh;*/
+	min-height: 550px;
+	/*margin-top:2vh;*/
+	width: 94%;	
+	/*padding: 5%;*/
+	box-shadow: 1px 1px 3px 2px lightgrey,-1px -1px 3px 2px #fff;
+	background-color: #fff;
+	
+}
+.left-part{
+	position: relative;
+	background-image:url('../images/cool-background.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	/*border: 60px solid blue;*/
+	clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+	/*border-radius:0% 5% 0% 0%;*/
+    height: 95vh;
+    min-height: 800px;
+    /*background-image: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)), linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),url('../images/login-page-bg.jpg') ;*/
+}
+.left-part h1{
+	padding-top: 15%;
+	padding-left: 30%;
+	color: #000;
+	font-weight: bold;
+	font-size: 2.5em;
+	letter-spacing: 1px;
+	font-family: 'Kanit', sans-serif;
+}
+.left-part p{
+	text-align: center;
+	font-size: .9em;
+	font-weight: 400;
+	color:#898989;
+	letter-spacing: 1px;
+    margin-top: 15px;
+}
+.logopart{
+	position: relative;
+}
+.logopart img{
+	height: 300px;
+	width: 300px;
+}
+.logoname{
+   font-size: 2em;
+   position: relative;
+   top: -40px;
+   font-family: 'Quicksand', sans-serif;
+   background-color: #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  user-select: none;
+}
+.right-part{
+position: relative;
+ height: 95vh;
+    min-height: 800px;
+/*background-color: #c2d6d6;*/
+ 	/*background-image: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)), linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),url('../images/login-page-bg.jpg') ;*/
+background-size: 100% 100%;
+border-radius: 20px 0px 0px 20px;
+/*background-color: red;*/
+}
+.right-part h2{
+	margin-left: 10px;
+   margin-top: 10%;
+  letter-spacing:1px; 
+  /*color: #fff;*/
+}
+.right-part xmp{
+		margin-left: 10px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing:1px;
+  margin-bottom: 50px; 
+  /*color: #fff;*/
+}
+.form-main input[type="text"],.form-main input[type="number"],.form-main input[type="password"],.form-main input[type="email"],textarea{
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 10px 5px;
+  background: white no-repeat;
+  background-image: linear-gradient(to bottom, #0073e6, #0073e6), linear-gradient(to bottom, silver, silver);
+  background-size: 0 2px, 100% 1px;
+  background-position: 50% 100%, 50% 100%;
+  transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background-color:transparent;
+  transition: .3s;
+   /*color: #fff; */
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.form-main input[type="text"]:focus,.form-main input[type="number"]:focus,.form-main input[type="password"]:focus,.form-main input[type="email"]:focus,textarea:focus{
+	border:none;
+  background-size: 100% 2px, 100% 1px;
+  outline: none;
+}
+
+
+
+#email-label,#pass-label,#fname-label,#uname-label,#repass-label,#address-label,#country-label,#city-label,#pincode-label,#contact-label{
+	position: absolute;
+	padding-left: 10px;
+	top: 10px;
+	left: 10px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: lightgrey;
+	transition: .4s;
+}
+		#fp{
+			float: right;
+			position: relative;
+			right: 20%;
+			top: -20px;
+			 color: #fff;
+		}
+	
+		.form-check-input{
+			position: absolute;
+			left: 20px;
+   		}
+		.right-part .btn{
+          position: relative;
+          top: 30px;
+         left: 10px;
+		}
+		.form-main p{
+			position: relative;
+			top: 40px;
+		    left: 10px;
+		}
+		#signup{
+   			background-color: #79a6d2;
+   			width: 150px;
+   			border-radius: 50px;
+   			border: none;
+   		}
+   		@media only screen and (max-width: 950px){
+   			.logoname{
+			font-size: 1.5em;
+		}
+		.logopart img{
+			height: 200px;
+			width: 200px;
+		}
+		.left-part h1{
+			padding-left: 20%;
+			text-align: center;
+		}
+   		}
+	@media only screen and (max-width: 768px){
+		.left-part{
+            height: 70vh;
+            min-height: 500px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .right-part{
+            border-radius: 20px 20px 0px 0px;
+            height: 100vh;
+            min-height: 1100px;
+            max-height: 700px;
+        }
+        	#fp{
+			right: 10%;
+		}
+		.left-part h1{
+			padding-left: 0%;
+			text-align: center;
+		}
+		
+	}
