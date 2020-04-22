@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login@PH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  
+                               <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+  
+<link href="../css/signup.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+  <div class="outer-back">
+   <div class="container-fluid main-div">
+    <div class="row">
+   	  <div class="left-part col-md-5 col-sm-12" >
+   	  	<h1>
+          Welcome !
+   	  	</h1>
+   	  	<p>
+   	  		Programmer Hub Is A Online Plateform For learning ,<br/> Working & Hiring For Your Work .
+   	  	</p>
+        <center><div class="logopart">
+          <img src="..\images\logofinal.png" >
+        <div class="logoname">Programmers&nbsp;Hub</div></div></center>
+   	  </div>
+   	  <div class="right-part col-md-7">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-1"></div>
+               <div class="col-md-11 form-main">
+                <form id="signupform" onsubmit="return false">
+                  <h2>Sign Up</h2>
+   	               	<p> <xmp>Sign Up Here</xmp> </p>
+                  
+   	               	<div class=" col-sm-12 col-md-12">
+                      <div class="row">
+
+                        <div class="col-md-5 col-sm-10">
+                         <input type="text" id="fname" name="uname">
+                         <label for="fname" id="fname-label">User Name</label>
+                        </div>
+                     
+                        <div class=" col-sm-10 col-md-5">
+                          <input type="email" id="email" class="" name="email">
+                          <label for="email" id="email-label">Email Id</label>
+                       </div>
+                      </div>
+                     </div>
+                     <br/>
+                     <div class=" col-sm-12 col-md-12">
+                      <div class="row">
+                         Gender: &nbsp;<div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="defaultUnchecked" name="gender" value="male" checked>
+                          <label class="custom-control-label" for="defaultUnchecked">Male</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="defaultUnchecked1" name="gender" value="female">
+                          <label class="custom-control-label" for="defaultUnchecked1">Female</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="defaultUnchecked1" name="gender" value="other">
+                          <label class="custom-control-label" for="defaultUnchecked1">Other</label>
+                        </div>
+                      </div>
+                     </div>
+                     <br/>
+                    <div class="col-sm-12 col-md-12">
+                      <div class="row">
+                       <div class="col-sm-12 col-md-5">
+                        <select class="browser-default custom-select" name="country" id="country">
+                        </select>
+                      </div>
+
+                      <div class="col-sm-12 col-md-5">
+                        <select class="browser-default custom-select" name="city" id="city">
+                        </select>
+                      </div>
+                     </div> 
+                    </div>
+                    <br/>
+                     <div class=" col-sm-12 col-md-10">
+                      <textarea id="address" class="col-sm-12" name="add"></textarea>
+                        <label for="address" id="address-label">address</label>
+                     </div>
+
+                    <div class="col-sm-12 col-md-12">
+                      <div class="row">
+                       <div class="col-sm-12 col-md-5">
+                        <input type="number" id="pincode" class="" name="pin">
+                       <label for="pincode" id="pincode-label">Pin Code</label>
+                      </div>
+                      <div class="col-sm-12 col-md-5">
+                        <input type="number" id="contact" class="" name="number">
+                       <label for="contact" id="contact-label">Contact Number</label>
+                      </div>
+                     </div> 
+                    </div>
+
+                    <div class="col-sm-12 col-md-12">
+                      <div class="row">
+                       <div class="col-sm-12 col-md-5">
+                        <input type="password" id="password" class="" name="pass">
+                       <label for="password" id="pass-label">Password</label>
+                      </div>
+                      <div class="col-sm-12 col-md-5">
+                        <input type="password" id="repassword" class="repass" name="repass">
+                       <label for="repassword" id="repass-label">Retype Password</label>
+                       <span id="pass-verify" style="color: #fff">status</span>
+                      </div>
+
+                     </div> 
+                    </div>
+                
+                      
+                    <button class="btn btn-primary btn-lg" onclick="page1()" id="signup"> Submit </button>
+                    <p >Already Have an Account <a href="../index.php"> Login Here</a></p>
+                  </form>
+              </div>
+            </div>
+         </div>
+   	  </div>
+    </div>
+ </div>
+</div>
+</body>
+<script src="../js/signup.js"></script>
+<script type="text/javascript">
+  var form=document.forms[0];
+  form.city.disabled=true;
+ console.log(form);
+    $.ajax({
+        url:'../php/readCountry.php',
+        success:function(data,b){
+            setCountry(data);
+        }
+    });
+    function setCountry(data){
+      //console.log(data);
+        var all=data.split('\n');
+        var output='<option selected value="">Choose Your Country</option>';
+        for(var i=0;i<all.length;i++){
+            var a=all[i];
+            output+='<option value="'+a+'">'+a+'</option>';
+        }
+        form.country.innerHTML=output;
+    }
+    
+    document.getElementById("country").addEventListener("change", city);
+    function city(){
+    form.city.disabled=false;
+      var e=form.country; 
+      var ans=e.options[e.selectedIndex].value;
+      if(ans=='')
+        alert('Select Country First');
+      $.ajax({
+          url:'../php/readCity.php',
+           data:{
+                  name:ans
+              },
+          type:"POST",
+          success:function(data,b){
+              setCity(data);
+          }
+      });
+    }
+    function setCity(data){
+       var all=data.split('\n');
+        var output='<option selected value="">Choose Your City</option>';
+        for(var i=0;i<all.length;i++){
+            var a=all[i];
+            output+='<option value="'+a+'">'+a+'</option>';
+        }
+        form.city.innerHTML=output;
+    }
+  $(document).ready(function(){
+    $("#repassword,#password").keyup(function(){
+     $pass = $('#password').val();
+     $repass = $('#repassword').val();
+     if($pass == $repass){
+        $("#pass-verify").html("<font color='green'>Password Matched </font>");
+     }
+     else{
+        $("#pass-verify").html("Not-Match");
+     }
+    });
+  });
+
+    function page1(){
+      var form=document.forms[0];
+      //console.log(form.gender.value);
+      var uname=form.uname.value;
+      var email=form.email.value;
+      var country=form.country.value;
+      var city=form.city.value;
+      var address=form.add.value;
+      var pincode=form.pin.value;
+      var number=form.number.value;
+      var pass=form.pass.value;
+      var repass=form.repass.value;
+      
+      if(uname.length==0){
+          alert("Please Enter your Name");
+          form.uname.focus();
+      }else if(email.length==0){
+          alert("Please Enter your Email");
+          form.email.focus();
+      }else if(country.length==0){
+          alert("Please Select your country");
+          form.country.focus();
+      }else if(city.length==0){
+          alert("Please select your city");
+          form.city.focus();
+      }else if(address.length==0){
+          alert("Please enter your address");
+          form.address.focus();
+      }else if(pincode.length==0){
+          alert("Please enter your pincode");
+          form.pincode.focus();
+      }else if(number.length==0){
+          alert("Please enter your number");
+          form.number.focus();
+      }else if(pass.length==0){
+          alert("Please enter password");
+          form.pass.focus();
+      }else if(repass.length==0){
+          alert("Please Retype password");
+          form.repass.focus();
+      }else if(repass!=pass){
+          alert("Password do not match");
+          form.repass.focus();
+      }
+      else{
+            var details={
+              uname:uname,
+              email:email,
+              gender:form.gender.value,
+              country:country,
+              city:city,
+              address:address,
+              pincode:pincode,
+              number:number,
+              pass:pass,
+              repass:repass,
+          };
+          $.ajax({
+              url:'../php/register.php',
+              data:details,
+              type:"POST",
+              success:function(a,b){
+                  alert(a);
+                  if(a=="success"){
+                        var cuki = "key1="+number+"; expires="+new Date(new Date().getTime()+9999999999999).toGMTString()+"; path=/programmerhub/;";
+                        document.cookie=cuki;
+                        window.location.replace("../");
+                  }
+              }
+          });
+    }
+  }  
+</script>
+</html>
