@@ -68,11 +68,11 @@
       }
      });
 
-      $('#city').focus(function(){
+      $('#state').focus(function(){
        $('#city-label').css({"color":"#006699","top":"-10px","left":"0px","font-size":".8em"});
      });
-     $('#city').blur(function(){
-      $a = $('#city').val();
+     $('#state').blur(function(){
+      $a = $('#state').val();
       if($a.length == 0){
        $('#city-label').css({"color":"lightgrey","top":"10px","left":"10px","font-size":"1em"});
       }

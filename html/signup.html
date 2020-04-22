@@ -90,12 +90,17 @@
                       </div>
 
                       <div class="col-sm-12 col-md-5">
-                        <select class="browser-default custom-select" name="city" id="city">
+                        <select class="browser-default custom-select" name="state" id="state">
                         </select>
                       </div>
                      </div> 
                     </div>
                     <br/>
+                    <div class=" col-sm-12 col-md-10">
+                         <select class="browser-default custom-select" name="city" id="city">
+                        </select>
+                     </div>
+                     <br/>
                      <div class=" col-sm-12 col-md-10">
                       <textarea id="address" class="col-sm-12" name="add"></textarea>
                         <label for="address" id="address-label">address</label>
@@ -144,52 +149,85 @@
 <script src="../js/signup.js"></script>
 <script type="text/javascript">
   var form=document.forms[0];
+  form.state.disabled=true;
   form.city.disabled=true;
  console.log(form);
     $.ajax({
         url:'../php/readCountry.php',
         success:function(data,b){
-            setCountry(data);
+          var obj=JSON.parse(data);
+          setCountry(obj);
         }
     });
     function setCountry(data){
-      //console.log(data);
-        var all=data.split('\n');
+        var all=data;
         var output='<option selected value="">Choose Your Country</option>';
-        for(var i=0;i<all.length;i++){
-            var a=all[i];
-            output+='<option value="'+a+'">'+a+'</option>';
+        for(var i=0;i<all.countries.length;i++){
+            var a=all.countries[i]['name'];
+            var b=all.countries[i]['id'];
+            output+='<option value="'+b+'">'+a+'</option>';
         }
         form.country.innerHTML=output;
     }
     
-    document.getElementById("country").addEventListener("change", city);
-    function city(){
-    form.city.disabled=false;
+    document.getElementById("country").addEventListener("change", state);
+    document.getElementById("state").addEventListener("change", city);
+    function state(){
+    form.state.disabled=false;
       var e=form.country; 
       var ans=e.options[e.selectedIndex].value;
       if(ans=='')
         alert('Select Country First');
       $.ajax({
-          url:'../php/readCity.php',
-           data:{
-                  name:ans
-              },
-          type:"POST",
+           url:'../php/readState.php',
           success:function(data,b){
-              setCity(data);
+               var obj=JSON.parse(data);
+               setState(obj,ans);
           }
       });
     }
-    function setCity(data){
-       var all=data.split('\n');
+    function setState(data,countryid){
+      var all=data;
+        var output='<option selected value="">Choose Your State</option>';
+        for(var i=0;i<all.states.length;i++){
+            var b=all.states[i]['country_id'];
+            if(b==countryid){
+              var a=all.states[i]['name'];
+              var c=all.states[i]['id'];
+              output+='<option value="'+c+'">'+a+'</option>';
+          }
+        }
+        form.state.innerHTML=output;
+    }
+
+    function city(){
+    form.city.disabled=false;
+      var e=form.state; 
+      var ans=e.options[e.selectedIndex].value;
+      if(ans=='')
+        alert('Select State First');
+      $.ajax({
+          url:'../php/readCity.php',
+          success:function(data,b){
+                var obj=JSON.parse(data);
+                setCity(obj,ans);
+          }
+      });
+    }
+    function setCity(data,stateid){
+      var all=data;
         var output='<option selected value="">Choose Your City</option>';
-        for(var i=0;i<all.length;i++){
-            var a=all[i];
-            output+='<option value="'+a+'">'+a+'</option>';
+        for(var i=0;i<all.cities.length;i++){
+              var b=all.cities[i]['state_id'];
+            if(b==stateid){
+              var c=all.cities[i]['id'];
+              var a=all.cities[i]['name'];
+              output+='<option value="'+c+'">'+a+'</option>';
+          }
         }
         form.city.innerHTML=output;
     }
+
   $(document).ready(function(){
     $("#repassword,#password").keyup(function(){
      $pass = $('#password').val();
@@ -209,6 +247,7 @@
       var uname=form.uname.value;
       var email=form.email.value;
       var country=form.country.value;
+      var state=form.state.value;
       var city=form.city.value;
       var address=form.add.value;
       var pincode=form.pin.value;
@@ -225,6 +264,9 @@
       }else if(country.length==0){
           alert("Please Select your country");
           form.country.focus();
+      }else if(state.length==0){
+          alert("Please select your state");
+          form.state.focus();
       }else if(city.length==0){
           alert("Please select your city");
           form.city.focus();
@@ -253,6 +295,7 @@
               email:email,
               gender:form.gender.value,
               country:country,
+              state:state,
               city:city,
               address:address,
               pincode:pincode,

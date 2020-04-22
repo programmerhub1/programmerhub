@@ -9,7 +9,7 @@
 	if (mysqli_query($db, $sql)) {
 		$errors = [];
 		$temp=0;
-		$sqlTable0= 'create table if not exists programmerhub.user(id varchar(20),name varchar(20),phno varchar(16),city varchar(30),country varchar(30), pincode varchar(15),address varchar(100),pic varchar(40),email varchar(30),password varchar(30),PRIMARY KEY(name),CONSTRAINT UC_user UNIQUE (email,phno))';
+		$sqlTable0= 'create table if not exists programmerhub.user(id varchar(20),name varchar(20),phno varchar(16),city varchar(30),state varchar(30),country varchar(30), pincode varchar(15),address varchar(100),pic varchar(40),email varchar(30),password varchar(30),PRIMARY KEY(name),CONSTRAINT UC_user UNIQUE (email,phno))';
 		$sqlTable1='create table if not exists programmerhub.project(pid varchar(20),pname varchar(20),pdis text,pexlink varchar(50),ppic varchar(40),uid varchar(20))';
 		$sqlTable2='create table if not exists programmerhub.chat(myid varchar(20),frdid varchar(20))';
 		$sqlTable3='create table if not exists programmerhub.connection(mefollowing varchar(20),thisperson varchar(20))';

@@ -6,6 +6,7 @@
 	$gender=$_POST['gender'];
 	$country=$_POST['country'];
 	$city=$_POST['city'];
+	$state=$_POST['state'];
 	$address=$_POST['address'];
 	$pincode=$_POST['pincode'];
 	$number=$_POST['number'];
@@ -15,7 +16,7 @@
 	$time=1582000000000;
 	$id=round(microtime(true) * 1000)-$time;
 
-	$sql="insert into user values('".$id."','".$uname."','".$number."','".$city."','".$country."','".$pincode."','".$address."','','".$em."','".$pass."')";
+	$sql="insert into user values('".$id."','".$uname."','".$number."','".$city."','".$state."','".$country."','".$pincode."','".$address."','','".$em."','".$pass."')";
 	if(mysqli_query($db,$sql)){
 	    echo "success";
 	}else{

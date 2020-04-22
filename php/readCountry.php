@@ -1,7 +1,9 @@
 <?php
-	$myfile = fopen("../txt/country.txt", "r") or die("Unable to open file!");
+	$myfile = fopen("../txt/countries.json", "r") or die("Unable to open file!");
+	$txt='';
 	while(!feof($myfile)) {
-	  echo fgets($myfile);
+	  $txt.=fgets($myfile);
 	}
 	fclose($myfile);
+	echo $txt;
 ?>

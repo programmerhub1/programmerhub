@@ -1,8 +1,9 @@
 <?php
-	$city=strtolower($_POST['name']);
-	$myfile = fopen("../txt/".$city.".txt", "r") or die("Unable to open file!");
+	$myfile = fopen("../txt/cities.json", "r") or die("Unable to open file!");
+	$txt='';
 	while(!feof($myfile)) {
-	  echo fgets($myfile);
+	  $txt.=fgets($myfile);
 	}
 	fclose($myfile);
+	echo $txt;
 ?>
