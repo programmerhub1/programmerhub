@@ -52,7 +52,7 @@
                   <h2>Login</h2>
    	               	<p> <xmp>login to start </></xmp> </p>
 
-               <form id="loginform">
+               <form id="loginform" onsubmit="return false">
                       <div class=" col-sm-12 col-md-11">
                         <i class="fa fa-user usr-icn"></i>
                         <input type="text" id="email" class="" name="em" autocomplete="off" value="">
@@ -75,7 +75,7 @@
                                 <span class="checkmark"></span>
                               </label>
                          </div>
-                    <button class="btn btn-primary btn-lg" id="login" value="Login">Login</button> 
+                    <button class="btn btn-primary btn-lg" id="login" onclick="valid()" value="Login">Login</button> 
                   </form>
                     <p >Don't Have an Account <a href="signup.html"> Sign Up Here</a></p>
               </div>
@@ -87,6 +87,7 @@
 </div>
 </body>
 <script>
+  var form=document.forms[0];
   $(document).ready(function(){
 
       if(email.value.length > 0){
@@ -127,9 +128,9 @@
             },
             type:"POST",
             success:function(a,b){
-          alert(a);
+          	alert(a);
                 if(a=="success"){
-                    var cuki = "key1="+form.em.value+"; expires="+new Date(new Date().getTime()+9999999999999).toGMTString()+"; path=/programmerhub/;";
+	                var cuki = "key1="+form.em.value+"; expires="+new Date(new Date().getTime()+9999999999999).toGMTString()+"; path=/programmerhub/;";
                     document.cookie=cuki;
                     window.location.replace("../");
                 }else
