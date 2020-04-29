@@ -130,7 +130,7 @@
             success:function(a,b){
           	alert(a);
                 if(a=="success"){
-	                var cuki = "key1="+form.em.value+"; expires="+new Date(new Date().getTime()+9999999999999).toGMTString()+"; path=/programmerhub/;";
+	                var cuki = "key1="+form.em.value+"; expires="+new Date(new Date().getTime()+9999999999999).toGMTString()+"; path=/";
                     document.cookie=cuki;
                     window.location.replace("../");
                 }else
